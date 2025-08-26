@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yuán's profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffdeeb;
+            margin: 0;
+            font-family: 'Noto Sans Symbols', 'Noto Sans', Arial, sans-serif;
+        }
+        /*main window*/
+        .main-window {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #000000;
+            background-color: #FFEAF5;
+            height: 600px;
+            margin: 10vh 20vw;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        .main-header {
+            position: relative;
+            display: block;
+            border: 1px solid #000000;
+            background-color: #FFEAF5;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        /*partitions with main window*/
+        .main-col-partition {
+            display: flex;
+            flex: 1 1 0;
+            flex-direction: column;
+            padding: 10px;
+        }
+        .main-row-partition {
+            position: relative;
+            display: flex;
+            flex: 1 1 auto;
+            flex-direction: column;
+            border: 1px solid #000000;
+            background-color: #FFEAF5;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        
+        .partition-header {
+            border: 1px solid #000000;
+            background-color: #FFEAF5;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .columns {
+            display: flex;
+            flex: 1 1 auto;
+            flex-direction: row;
+        }
+        #about-me {
+            background-color: #ffb0ce;
+        }
+        .list-item {
+            border: 1px solid #000000;
+            padding: 5px;
+        }
+        p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-window">
+        <div class="main-header">yuan.zip</div>
+        <div class="main-row-partition">
+            <div class="columns">
+                
+                <div class="main-col-partition" id="about-me">
+                    <div style="height: 150px; width: 100%; background-color: #FFD700; margin-bottom: 10px;">
+                        image place holder
+                    </div>
+                    <div class="partition-header">about me</div>
+                    <p>✎ yuán ⋆.ೃ࿔*:･<br>
+                    ╰┈➤ she/her<br>
+                    ╰┈➤ 24 years old. <br>
+                    ╰┈➤ october 12, 2000.<br>
+                    ╰┈➤ ECE major.
+                    </p>
+                </div>
+                <div class="main-col-partition">
+                    <p>hi! brief info about me, i am a just a lil geek that has lots of hobbies! i am someone who has interests in many things and wants to learn how to do the things that interests her. :P</p>
+                    <div class="list-item">fashion</div>
+                    <div class="list-item">coding</div>
+                    <div class="list-item">art</div>
+                    <div class="list-item">fashion</div>
+                </div>
+                
+                <div class="main-col-partition">
+                    col
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
