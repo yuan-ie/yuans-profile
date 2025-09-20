@@ -23,7 +23,7 @@
             background-color: #f5e8ff;
             /* height: 650px;
             width: 750px; */
-            
+
             width: 100vw;
             max-width: 750px;
             aspect-ratio: 750/650;
@@ -35,7 +35,9 @@
             box-sizing: border-box; /*includes the padding is within width and height*/
 
             min-height: 0;
-            transform-origin: top left;
+            /* transform-origin: top left; */
+
+            font-size: calc(16px * (100vw / 750));
         }
 
         @media (max-width: 750px) {
