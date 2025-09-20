@@ -71,12 +71,6 @@
             min-height: 0;
         }
 
-        #content {
-            display: flex;
-            flex: 1;
-            min-height: 0;
-        }
-
         .list-item {
             border: 1px solid #000000;
             padding: 5px;
@@ -108,7 +102,6 @@
             flex: 1 1 0;
             flex-direction: row;
             height: 100%;
-            min-height: 0;
         }
         /* buttons placed side-by-side minimum size */
         .columns-button {
@@ -121,9 +114,12 @@
             flex: 1 1 0;
             flex-direction: column;
             padding: 10px;
-            min-height: 0;
+            height: 100%;
         }
-       
+        /* mainly for projects page */
+        .partition-list {
+            padding: 10px;
+        }
         /* header title of different partitions */
         .partition-header {
             border: 1px solid #000000;
@@ -132,10 +128,13 @@
             padding: 10px;
             margin-bottom: 10px;
         }
-        
+        #content {
+            display: flex;
+            flex: 1;
+            min-height: 0;
+        }
         #about-me {
             background-color: #c4b2d1;
-            min-height: 0;
         }
 
         
@@ -150,33 +149,12 @@
         }
 
         /* ❥ ------ PROJECT PAGE STUFF ------ */
-        .project-partition {
-            display: flex;
-            flex: 1 1 0;
-            flex-direction: column;
-            padding: 10px;
-            height: 100%;
-        }
-         /* mainly for projects page */
-        .project-list {
-            display: flex;
-            flex: 1;
-            flex-direction: column;
-            padding: 10px;
-        }
-        .project-item {
-            padding: 10px;
-        }
-        .project-item p {
-            margin: 0;
-        }
-        .project-list .project-item:nth-child(odd){
+        #item-1 {
             background-color: #dbcce6;
         }
-        .project-list .project-item:nth-child(even) {
+        #item-2 {
             background-color: #c4b2d1;
         }
-        
 
         /* ❥ ------ PORTFOLIO PAGE STUFF ------ */
         .port-container {
@@ -276,187 +254,63 @@
         <diy class="columns-button">
             <button class="menu-button" onclick="aboutMe()">about</button>
             <button class="menu-button" onclick="projectsMe()">projects</button>
-            <button class="menu-button" onclick="portfolioMe()">extra</button>
+            <button class="menu-button" onclick="ExtraMe()">extra</button>
         </diy>
         <div class="main-block">
             <!-- content changes with this div block-->
             <div id="content">
-                <div class="columns">
-                    <div class="partition" id="about-me">
-                        <div style="height: 150px; width: 100%; background-color: #ffffff; margin-bottom: 10px; text-align: center;">
-                            <img src="./data/me.png" height=150px>
+                <div class="port-container">
+
+                    <!-- PROJECT WINDOW -->
+                    <div class="port-block-left" id="scroll-window">
+                        <h3 id="project-title" style="margin-top: 0; margin-bottom: 5px; ">⭑.ᐟ biopsy slide GUI ⋆˚꩜｡</h3>
+
+                        <!-- project description -->
+                        <p style="margin-top: 10px;">❥ <b><u>Project Description</u></b>:</p>
+                        <p id="project-description" style=" ">Graphical User Interface for part of my Senior Design Project. Made to display breast tissue biopsy slide images (original image, annotated image, and results from multiple ML algorithms). Images in the directory can be browsed in the scrollbar window. When image is selected, user can view the image in original or zoomed display and results from different ML algorthims. Results include a histogram comparing True/False Positives/Negatives of the annotations vs. the results.</p>
+
+                        <!-- project languages/medium -->
+                        <p>❥ <b><u>Languages/Medium</u></b>:</p>
+                        <p id="project-mediums">Python, PYQT6, Bash, Github.</p>
+
+                        <p>❥ <b><u>Example</u></b>:</p>
+                        <!-- project image -->
+                        <img id="project-image" src="./data/project-png/biopsy_gui.png" width=100%>
+                    </div>
+
+                    <!-- PROJECT LIST WINDOW -->
+                    <div class="port-block-right">
+                        <p>project list</p>
+                        <div class="port-block-right-scroll" id="scroll-list">
+                            <button onclick="project_biopsy_gui()">biopsy gui</button>
+                            <button onclick="project_character_creation()">character creation</button>
+                            <button onclick="project_xiaoling()">xiaoling</button>
+                            <button onclick="project_rifu()">rifu</button>
+                       
                         </div>
-                        <div class="partition-header">character info</div>
-                        <p>✎ yuán ⋆.ೃ࿔*:･<br>
-                        ╰┈➤ she/her<br>
-                        ╰┈➤ 24 years old.<br>
-                        ╰┈➤ oct 12, 2000.<br>
-                        ╰┈➤ ECE major.
-                        </p>
-                        <p>✧ message:</p>
-                        <p class="message" style="margin: 0;">hi! i am a just a lil geek that has lots of hobbies! :P</p>
-                    </div>
-                    <div class="partition">
-                        <p>✧ personal attributes:</p>
-                        <div class="list-item">fashion influencer</div>
-                        <div class="list-item">E/C engineering major</div>
-                        <div class="list-item">artist</div>
-                        <p style="margin-top: 10px;">✧ personal skills:</p>
-                        <div class="list-item">fashion lv.10</div>
-                        <div class="list-item">coding lv.6</div>
-                        <div class="list-item">art lv.6</div>
-                        <div class="list-item">editing lv.3</div>
-                        <div class="list-item">karate lv.1</div>
-                        <p style="margin-top: 10px;">✧ character evaluation:</p>
-                        <p style="margin-bottom: 0px;">this character is an annoying perfectionist that will always try to make things herself, no matter how inconvenient it is.</p>
-                    </div>
-                    <div class="partition">
-                        <div class="partition-header">links & socials</div>
-                        <p>❥ instagram:</p>
-                        <p><a href="https://www.instagram.com/x.kyuhn">@x.kyuhn</a> > fashion</p>
-                        <p><a href="https://www.instagram.com/x.jyuhn">@x.jyuhn</a> > projects</p>
-                        <p>❥ tiktok:</p>
-                        <p><a href="https://www.tiktok.com/@lov3lys">@lov3lys</a> > fashion</p>
-                        <p>❥ youtube:</p>
-                        <p><a href="https://www.youtube.com/@x-jyuhn">@x-jyuhn</a></p>
-                        <p>❥ github:</p>
-                        <p><a href="https://www.github.com/yuan-ie">@yuan-ie</a></p>
-                        <p>❥ discord + server:</p>
-                        <p>@yuan.ie</p>
-                        <p><a href="https://discord.gg/C7Fe2Auqdj">yuan's starspace</a></p>
-                        
-                    </div>
+                    </div>                  
                 </div>
             </div>
         </div>
     </div>
     <script>
-        const aboutContent = `
-        <div class="columns">
-            <div class="partition" id="about-me">
-                <div style="height: 150px; width: 100%; background-color: #ffffff; margin-bottom: 10px; text-align: center;">
-                    <img src="./data/me.png" height=150px>
-                </div>
-                <div class="partition-header">character info</div>
-                <p>✎ yuán ⋆.ೃ࿔*:･<br>
-                ╰┈➤ she/her<br>
-                ╰┈➤ 24 years old.<br>
-                ╰┈➤ oct 12, 2000.<br>
-                ╰┈➤ ECE major.
-                </p>
-                <p>✧ message:</p>
-                <p class="message" style="margin: 0;">hi! i am a just a lil geek that has lots of hobbies! :P</p>
-            </div>
-            <div class="partition">
-                <p>✧ personal attributes:</p>
-                <div class="list-item">fashion influencer</div>
-                <div class="list-item">E/C engineering major</div>
-                <div class="list-item">artist</div>
-                <p style="margin-top: 10px;">✧ personal skills:</p>
-                <div class="list-item">fashion lv.10</div>
-                <div class="list-item">coding lv.6</div>
-                <div class="list-item">art lv.6</div>
-                <div class="list-item">editing lv.3</div>
-                <div class="list-item">karate lv.1</div>
-                <p style="margin-top: 10px;">✧ character evaluation:</p>
-                <p style="margin-bottom: 0px;">this character is an annoying perfectionist that will always try to make things herself, no matter how inconvenient it is.</p>
-            </div>
-            <div class="partition">
-                <div class="partition-header">links & socials</div>
-                <p>❥ instagram:</p>
-                <p><a href="https://www.instagram.com/x.kyuhn">@x.kyuhn</a> > fashion</p>
-                <p><a href="https://www.instagram.com/x.jyun4">@x.jyun4</a> > projects</p>
-                <p>❥ tiktok:</p>
-                <p><a href="https://www.tiktok.com/@lov3lys">@lov3lys</a> > fashion</p>
-                <p>❥ youtube:</p>
-                <p><a href="https://www.youtube.com/@x-jyuhn">@x-jyuhn</a></p>
-                <p>❥ github:</p>
-                <p><a href="https://www.github.com/yuan-ie">@yuan-ie</a></p>
-                <p>❥ discord + server:</p>
-                <p>@yuan.ie</p>
-                <p><a href="https://discord.gg/C7Fe2Auqdj">yuan's starspace</a></p>
-                
-            </div>
-        </div>
-        `;
-        const projectsContent = `
-        <div class="project-list">
-            <p>current projects:</p>
-            <div class="project-item">
-                <p>discord bot: virtual pet bot RIFU<br>brief: adopt a virtual pet and take care of it!<br> - includes level, hearts, and evolution system.
-                <br>★ python ★ discord library ★ sqlite3</p>
-            </div>
-            <div class="project-item">
-                <p>discord bot: administrative bot XIAOLING<br>brief: moderator bot for my discord server<br>- helps with moderator and communication purposes.
-                <br>★ python ★ discord library</p>
-            </div>
-            <div class="project-item">
-                <p>character creation app<br>brief: style an avatar with various hairstyles and clothing combinations<br>- all images hand-drawn.
-                <br>★ html ★ css ★ digital art</p>
-            </div>
-            <p><br>future projects:</p>
-            <div class="project-item">memo app</div>
-        </div>
-        `;
 
-        const portfolioContent = `
-        <div class="port-container">
-
-            <!-- PROJECT WINDOW -->
-            <div class="port-block-left" id="scroll-window">
-                <h3 id="project-title" style="margin-top: 0; margin-bottom: 5px; ">⭑.ᐟ biopsy slide GUI ⋆˚꩜｡</h3>
-
-                <!-- project description -->
-                <p style="margin-top: 10px;">❥ <b><u>Project Description</u></b>:</p>
-                <p id="project-description" style=" ">Graphical User Interface for part of my Senior Design Project. Made to display breast tissue biopsy slide images (original image, annotated image, and results from multiple ML algorithms). Images in the directory can be browsed in the scrollbar window. When image is selected, user can view the image in original or zoomed display and results from different ML algorthims. Results include a histogram comparing True/False Positives/Negatives of the annotations vs. the results.</p>
-
-                <!-- project languages/medium -->
-                <p>❥ <b><u>Languages/Medium</u></b>:</p>
-                <p id="project-mediums">Python, PYQT6, Bash, Github.</p>
-
-                <p>❥ <b><u>Example</u></b>:</p>
-                <!-- project image -->
-                <img id="project-image" src="./data/project-png/biopsy_gui.png" width=100%>
-            </div>
-
-            <!-- PROJECT LIST WINDOW -->
-            <div class="port-block-right">
-                <p>project list</p>
-                <div class="port-block-right-scroll" id="scroll-list">
-                    <button onclick="project_biopsy_gui()">biopsy gui</button>
-                    <button onclick="project_character_creation()">character creation</button>
-                    <button onclick="project_xiaoling()">xiaoling</button>
-                    <button onclick="project_rifu()">rifu</button>
-                
-                </div>
-            </div>                  
-        </div>`
-
-        function aboutMe(){
-            const content = document.getElementById('content')
-            content.innerHTML = aboutContent;
-        }
-
-        function projectsMe(){
-            const content = document.getElementById('content')
-            content.innerHTML = projectsContent;
-        }
-
-        function portfolioMe(){
-            const content = document.getElementById('content')
-            content.innerHTML = portfolioContent;
-        }
+        const projects = ["biopsy_gui", "character_creation", "rifu", "xiaoling"];
 
         const description_biopsy_gui = "Graphical User Interface for part of my Senior Design Project. Made to display biopsy slide images (original image, annotated image, and results from multiple ML algorithms). Images in the directory can be browsed in the scrollbar window. When image is selected, user can view the image in original or zoomed display and results from different ML algorthims. Results include a histogram comparing True/False Positives/Negatives of the annotations vs. the results."
+
         const mediums_biopsy_gui = "Python, PYQT6, Bash, Github."
 
         const description_character_creation = "Mini game that allows user to create a character with various customizations (class type, skin color, eye type, eye color, hair bangs/top/bottom + color, and clothing top/top2/bottom/bottom2). This game allows users to be creative and have a huge selection when customizing, making all individual characters a unique combination. Still a work in progress (designing the UI and image vectors of clothing)."
+
         const mediums_character_creation = "HTML, Javascript, Digital Art, Vector Images."
 
         const description_rifu = "Discord bot that allows each user in a server to adopt their own virtual pet, level up the pet by limited daily interactions, and have fun. Each pet has a probability in becoming a certain type of specie with a fixed description of the specie. More actions include 'in-game' currency (coins), a shop to buy usable items, virtual gambling with coins, and so on. Each user's pet information is stored in a database. Eventually RIFU will be hosted for multiple servers to use."
+
         const mediums_rifu = "Python, Discord library, SQLite3."
 
         const description_xiaoling = "Discord bot that helps with administrative activities for a discord server. This bot auto-send a customized message and timeout a user after giving a strike or banning. Can also relay messages from a user (that has been sent through the bot's dm) and send a customized message to the user. Besides the administrative level, the bot is also used for aesthetic purposes to make the server look appealing and organized."
+
         const mediums_xiaoling = "Python, Discord library."
 
 
@@ -551,6 +405,7 @@
             const medium = document.getElementById('project-mediums')
             medium.textContent = mediums_xiaoling            
         }
+
     </script>
 </body>
 </html>
