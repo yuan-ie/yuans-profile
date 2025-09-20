@@ -29,7 +29,16 @@
             box-sizing: border-box; /*includes the padding is within width and height*/
 
             min-height: 0;
+            transform-origin: top left;
         }
+
+        @media (max-width: 750px) {
+            .wind.main-window {
+                /* scale down to fit screen width */
+                transform: scale(calc(100vw / 750));
+            }
+        }
+
         /* header of the main window */
         .main-header {
             position: relative;
